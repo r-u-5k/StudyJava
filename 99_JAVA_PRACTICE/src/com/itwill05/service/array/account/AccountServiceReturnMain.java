@@ -45,25 +45,25 @@ public class AccountServiceReturnMain {
 		}
 		
 		System.out.println("8. AccountServiceReturn객체야 계좌번호(6666번)와 입금할돈(4000원)줄게 입금해줘");
-		Account ipGumAccount = accountServiceReturn.ipGum(6666, 4444);
+		Account ipGumAccount = accountServiceReturn.ipGum(6666, 4000);
 		ipGumAccount.print();
 		
-		System.out.println("9. AccountServiceReturn객체야 계좌번호(1111번)와 출금할돈(500원)줄께 출금해줘");
+		System.out.println("9. AccountServiceReturn객체야 계좌번호(1111번)와 출금할돈(500원)줄게 출금해줘");
 		/*
 		정렬기준(standard) --> 1:번호,2:이름,3:잔고,4:이율 
 	    	정렬방법(order)    --> 1:오름차순,2:내림차순
 		 */
 		
-		System.out.println("10. AccountServiceReturn객체야 계좌를 잔고순으로 오름차순정렬해줘");
+		System.out.println("10. AccountServiceReturn객체야 계좌를 잔고 순으로 오름차순 정렬해줘");
 		accountServiceReturn.sort(3, 1);
 		
-		System.out.println("11. AccountServiceReturn객체야 계좌를 잔고순으로 내림차순정렬해줘");
+		System.out.println("11. AccountServiceReturn객체야 계좌를 잔고 순으로 내림차순 정렬해줘");
 		accountServiceReturn.sort(3, 2);
 		
-		System.out.println("12. AccountServiceReturn야 계좌객체줄께 이름,잔고,이율 수정(update)해줘");
+		System.out.println("12. AccountServiceReturn야 계좌객체줄게 이름,잔고,이율 수정(update)해줘");
 		
-		System.out.println("13. AccountServiceReturn야 계좌데이타줄께 이름,잔고,이율 수정(update)해줘");
+		System.out.println("13. AccountServiceReturn야 계좌데이타줄게 이름,잔고,이율 수정(update)해줘");
 		
-		System.out.println("14. AccountServiceReturn객체야 계좌번호줄께 계좌삭제한후 삭제한계좌객체반환해줘[OPTION]");
+		System.out.println("14. AccountServiceReturn객체야 계좌번호줄게 계좌삭제한후 삭제한계좌객체반환해줘[OPTION]");
 	}
 }

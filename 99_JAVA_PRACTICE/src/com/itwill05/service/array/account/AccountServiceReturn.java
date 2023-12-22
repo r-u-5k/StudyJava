@@ -197,11 +197,17 @@ public class AccountServiceReturn {
 		 * 2.입금
 		 * 3.입금계좌 참조변수반환
 		 */
-		
+		for (Account account : accounts) {
+			if (account.getNo() == no) {
+				account.setBalance(account.getBalance() + m);
+				break;
+			}
+			return account;
+		}
 		return null;
 
 	}
-
+	
 	/*
 	 * 9.계좌번호,출금할돈 인자로 받아서 출금
 	 */
