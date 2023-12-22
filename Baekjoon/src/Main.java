@@ -1,27 +1,28 @@
-import java.util.Arrays;
 import java.util.Scanner;
-
 public class Main {
 
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
 		
-		int n = scanner.nextInt();
-		double[] score = new double[n];
-		for (int i = 0; i < n; i++) {
-			score[i] = scanner.nextInt();
-		}
-		Arrays.sort(score);
-		double max = score[n - 1];
-		double sum = 0;
+		int k = scanner.nextInt();
+		int sum = 0;
 		
-		for (int i = 0; i < n; i++) {
-			score[i] = score[i] * 100 / max;
-			sum += score[i];
+		int[] money = new int[k];
+		for (int i = 0; i < k; i++) {
+			money[i] = scanner.nextInt();
+			int a = 0;
+			if (money[i - a] == 0) {
+				money[i - a - 1] = 0;
+				a += 2;
+			}
 		}
 		
-		System.out.println(sum / n);
+		for (int i = 0; i < money.length; i++) {
+			sum += money[i];
+		}
+		
+		System.out.println(sum);
 		
 		scanner.close();
 	}

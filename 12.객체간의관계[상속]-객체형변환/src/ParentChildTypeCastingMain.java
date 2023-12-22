@@ -44,7 +44,7 @@ class Child extends Parent {
 	}
 }
 
-public class ParentChildCastingMain {
+public class ParentChildTypeCastingMain {
 
 	public static void main(String[] args) {
 		System.out.println("- Child -> Parent -");
@@ -81,15 +81,16 @@ public class ParentChildCastingMain {
 		
 		// Parent = 구형, Child = 신형(업데이트 버전)
 		
-		Child c2 = new Child();
+		
 		
 		Parent p3 = new Child(); // 이것도 가능
 		p3.method1();
 		p3.method2();
 		p3.method3();
-		p3.method4();
+		p3.method4(); // 객체가 Child 타입이니까 Child에서 재정의된 메서드가 호출됨
 //		p3.method5();
 		
+		Child c2 = new Child();
 		Parent p2 = c2; // Child 타입을 Parent 타입으로 형변환해줬으니
 		Child c3 = (Child)p2; // 그 경우에 한해서만 역으로도 형변환 가능해짐
 		c3.method1();
