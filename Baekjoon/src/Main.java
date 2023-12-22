@@ -6,15 +6,16 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		
 		int k = scanner.nextInt();
+		int[] money = new int[k];
 		int sum = 0;
 		
-		int[] money = new int[k];
 		for (int i = 0; i < k; i++) {
 			money[i] = scanner.nextInt();
-			int a = 0;
-			if (money[i - a] == 0) {
-				money[i - a - 1] = 0;
-				a += 2;
+			for (int j = 0; j < i; j++) {
+				if (money[i - j] == 0) {
+					money[i - j - 1] = 0;
+					j++;
+				}
 			}
 		}
 		
