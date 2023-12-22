@@ -4,26 +4,22 @@ public class Main {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
-		
-		int k = scanner.nextInt();
-		int[] money = new int[k];
-		int sum = 0;
-		
-		for (int i = 0; i < k; i++) {
-			money[i] = scanner.nextInt();
-			for (int j = 0; j < i; j++) {
-				if (money[i - j] == 0) {
-					money[i - j - 1] = 0;
-					j++;
+		while (true) {
+			int n = scanner.nextInt();
+			if (n == 0) break;
+			String s = Integer.toString(n);
+			boolean b = false;
+			
+			for (int i = 0; i < s.length(); i++) {
+				if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
+					b = false;
+					break;
+				} else {
+					b = true;
 				}
 			}
+			System.out.println(b);
 		}
-		
-		for (int i = 0; i < money.length; i++) {
-			sum += money[i];
-		}
-		
-		System.out.println(sum);
 		
 		scanner.close();
 	}

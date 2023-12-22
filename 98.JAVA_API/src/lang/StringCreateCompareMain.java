@@ -77,9 +77,8 @@ public class StringCreateCompareMain {
 		String irum2 = "강경호";
 		
 		if (irum1.compareTo(irum2) > 0) {
-			System.out.println("(오름차순인 경우)irum1과 irum2를 교환");
+			System.out.println("(오름차순인 경우) irum1과 irum2를 교환하면 됨");
 		}
-		System.out.println(irum1 + " " + irum2);
 	}
 
 }
