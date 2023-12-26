@@ -57,11 +57,11 @@ public class AccountServiceReturnMain {
 		 */
 		
 		System.out.println("10. AccountServiceReturn객체야 계좌를 잔고 순으로 오름차순 정렬해줘");
-		accountServiceReturn.sort(1, 1);
+		accountServiceReturn.sort(3, 1);
 		accountServiceReturn.print();
 		
 		System.out.println("11. AccountServiceReturn객체야 계좌를 잔고 순으로 내림차순 정렬해줘");
-		accountServiceReturn.sort(1, 2);
+		accountServiceReturn.sort(3, 2);
 		accountServiceReturn.print();
 		
 		System.out.println("12. AccountServiceReturn야 계좌객체줄게 이름,잔고,이율 수정(update)해줘");

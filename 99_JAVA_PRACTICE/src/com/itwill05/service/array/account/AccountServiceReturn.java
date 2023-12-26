@@ -241,7 +241,7 @@ public class AccountServiceReturn {
 							if (isSwap == false) {
 								break;
 							}
-						}
+						} break;
 					case 2:
 						for (int i = 0; i < accounts.length - 1; i++) {
 							boolean isSwap = false;
@@ -256,7 +256,106 @@ public class AccountServiceReturn {
 							if (isSwap == false) {
 								break;
 							}
+						} break;
+				}
+			case 2:
+				switch (order) {
+				case 1:
+					for (int i = 0; i < accounts.length - 1; i++) {
+						boolean isSwap = false;
+						for (int j = 0; j < accounts.length - 1 - i; j++) {
+							if (accounts[j].getNo() > accounts[j + 1].getNo()) {
+								Account tempAccount = accounts[j];
+								accounts[j] = accounts[j + 1];
+								accounts[j + 1] = tempAccount;
+								isSwap = true;
+							}
 						}
+						if (isSwap == false) {
+							break;
+						}
+					} break;
+				case 2:
+					for (int i = 0; i < accounts.length - 1; i++) {
+						boolean isSwap = false;
+						for (int j = 0; j < accounts.length - 1 - i; j++) {
+							if (accounts[j].getNo() < accounts[j + 1].getNo()) {
+								Account tempAccount = accounts[j];
+								accounts[j] = accounts[j + 1];
+								accounts[j + 1] = tempAccount;
+								isSwap = true;
+							}
+						}
+						if (isSwap == false) {
+							break;
+						}
+					} break;
+				}
+			case 3:
+				switch (order) {
+				case 1:
+					for (int i = 0; i < accounts.length - 1; i++) {
+						boolean isSwap = false;
+						for (int j = 0; j < accounts.length - 1 - i; j++) {
+							if (accounts[j].getBalance() > accounts[j + 1].getBalance()) {
+								Account tempAccount = accounts[j];
+								accounts[j] = accounts[j + 1];
+								accounts[j + 1] = tempAccount;
+								isSwap = true;
+							}
+						}
+						if (isSwap == false) {
+							break;
+						}
+					} break;
+				case 2:
+					for (int i = 0; i < accounts.length - 1; i++) {
+						boolean isSwap = false;
+						for (int j = 0; j < accounts.length - 1 - i; j++) {
+							if (accounts[j].getBalance() < accounts[j + 1].getBalance()) {
+								Account tempAccount = accounts[j];
+								accounts[j] = accounts[j + 1];
+								accounts[j + 1] = tempAccount;
+								isSwap = true;
+							}
+						}
+						if (isSwap == false) {
+							break;
+						}
+					} break;
+				}
+			case 4:
+				switch (order) {
+				case 1:
+					for (int i = 0; i < accounts.length - 1; i++) {
+						boolean isSwap = false;
+						for (int j = 0; j < accounts.length - 1 - i; j++) {
+							if (accounts[j].getIyul() > accounts[j + 1].getIyul()) {
+								Account tempAccount = accounts[j];
+								accounts[j] = accounts[j + 1];
+								accounts[j + 1] = tempAccount;
+								isSwap = true;
+							}
+						}
+						if (isSwap == false) {
+							break;
+						}
+					} break;
+				case 2:
+					for (int i = 0; i < accounts.length - 1; i++) {
+						boolean isSwap = false;
+						for (int j = 0; j < accounts.length - 1 - i; j++) {
+							if (accounts[j].getIyul() < accounts[j + 1].getIyul()) {
+								Account tempAccount = accounts[j];
+								accounts[j] = accounts[j + 1];
+								accounts[j + 1] = tempAccount;
+								isSwap = true;
+							}
+						}
+						if (isSwap == false) {
+							break;
+						}
+					} break;
 				}
 		}
 	}
