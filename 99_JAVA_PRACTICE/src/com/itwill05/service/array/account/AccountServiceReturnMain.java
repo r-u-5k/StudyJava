@@ -71,7 +71,7 @@ public class AccountServiceReturnMain {
 		
 		System.out.println("13. AccountServiceReturn야 계좌데이타줄게 이름, 잔고, 이율 수정(update)해줘");
 		Account findAccount4 = accountServiceReturn.findByNo(1113);
-		findAccount4.setAccountData(1113, "CAN", 50000, 5.5);
+		findAccount4.setAccountData(findAccount4.getNo(), "CAN", 50000, 5.5);
 		accountServiceReturn.print();
 		
 		System.out.println("14. AccountServiceReturn객체야 계좌번호줄게 계좌 삭제한 후 삭제한 계좌 객체 반환해줘[OPTION]");
