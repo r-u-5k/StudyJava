@@ -116,7 +116,7 @@ public class AccountService {
 	public void ipGum(int no, int m) {
 		for (Account account : accounts) {
 			if (account.getNo() == no) {
-				account.setBalance(account.getBalance() + m);
+				account.ipGum(m);
 				break;
 			}
 		}
