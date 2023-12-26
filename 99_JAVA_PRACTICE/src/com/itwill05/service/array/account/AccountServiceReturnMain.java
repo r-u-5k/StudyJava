@@ -49,6 +49,8 @@ public class AccountServiceReturnMain {
 		ipGumAccount.print();
 		
 		System.out.println("9. AccountServiceReturn객체야 계좌번호(1111번)와 출금할돈(500원)줄게 출금해줘");
+		Account chulGumAccount = accountServiceReturn.chulGum(1111, 500);
+		chulGumAccount.print();
 		/*
 		정렬기준(standard) --> 1:번호,2:이름,3:잔고,4:이율 
 	    정렬방법(order)    --> 1:오름차순,2:내림차순
