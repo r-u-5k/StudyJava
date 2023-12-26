@@ -391,7 +391,6 @@ public class AccountServiceReturn {
 	 * 	A. 배열에서 Account객체삭제 
 	 * 	B. 배열사이즈감소
 	 *  C. 삭제한계좌객체반환
-	 *  
 	 */
 	public Account deleteByNo(int no) {
 		for (Account account : accounts) {
