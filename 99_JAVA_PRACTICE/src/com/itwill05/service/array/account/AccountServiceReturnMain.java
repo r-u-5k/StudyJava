@@ -44,11 +44,11 @@ public class AccountServiceReturnMain {
 			accounts[i].print();
 		}
 		
-		System.out.println("8. AccountServiceReturn객체야 계좌번호(6666번)와 입금할돈(4000원)줄게 입금해줘");
+		System.out.println("8. AccountServiceReturn객체야 계좌번호(6666번)와 입금할 돈(4000원)줄게 입금해줘");
 		Account ipGumAccount = accountServiceReturn.ipGum(6666, 4000);
 		ipGumAccount.print();
 		
-		System.out.println("9. AccountServiceReturn객체야 계좌번호(1111번)와 출금할돈(500원)줄게 출금해줘");
+		System.out.println("9. AccountServiceReturn객체야 계좌번호(1111번)와 출금할 돈(500원)줄게 출금해줘");
 		Account chulGumAccount = accountServiceReturn.chulGum(1111, 500);
 		chulGumAccount.print();
 		/*
@@ -64,17 +64,17 @@ public class AccountServiceReturnMain {
 		accountServiceReturn.sort(3, 2);
 		accountServiceReturn.print();
 		
-		System.out.println("12. AccountServiceReturn야 계좌객체줄게 이름,잔고,이율 수정(update)해줘");
+		System.out.println("12. AccountServiceReturn야 계좌객체줄게 이름, 잔고, 이율 수정(update)해줘");
 		Account findAccount3 = accountServiceReturn.findByNo(7777);
 		accountServiceReturn.updateAccount(findAccount3);
 		accountServiceReturn.print();
 		
-		System.out.println("13. AccountServiceReturn야 계좌데이타줄게 이름,잔고,이율 수정(update)해줘");
+		System.out.println("13. AccountServiceReturn야 계좌데이타줄게 이름, 잔고, 이율 수정(update)해줘");
 		Account findAccount4 = accountServiceReturn.findByNo(1113);
 		findAccount4.setAccountData(1113, "CAN", 50000, 5.5);
 		accountServiceReturn.print();
 		
-		System.out.println("14. AccountServiceReturn객체야 계좌번호줄게 계좌삭제한후 삭제한계좌객체반환해줘[OPTION]");
+		System.out.println("14. AccountServiceReturn객체야 계좌번호줄게 계좌 삭제한 후 삭제한 계좌 객체 반환해줘[OPTION]");
 		accountServiceReturn.deleteByNo(1112);
 		accountServiceReturn.print();
 	}
