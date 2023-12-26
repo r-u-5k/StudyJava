@@ -199,7 +199,7 @@ public class AccountServiceReturn {
 		 */
 		for (int i = 0; i < accounts.length; i++) {
 			if (accounts[i].getNo() == no) {
-				accounts[i].setBalance(accounts[i].getBalance() + m);
+				accounts[i].ipGum(m);
 				return accounts[i];
 			}
 		}
@@ -225,9 +225,9 @@ public class AccountServiceReturn {
 	 */
 	public void sort(int standard, int order) {
 		switch (standard) {
-			case 1:
+			case SORT_BY_NO:
 				switch (order) {
-					case 1:
+					case SORT_ASC:
 						for (int i = 0; i < accounts.length - 1; i++) {
 							boolean isSwap = false;
 							for (int j = 0; j < accounts.length - 1 - i; j++) {
@@ -242,7 +242,7 @@ public class AccountServiceReturn {
 								break;
 							}
 						} break;
-					case 2:
+					case SORT_DESC:
 						for (int i = 0; i < accounts.length - 1; i++) {
 							boolean isSwap = false;
 							for (int j = 0; j < accounts.length - 1 - i; j++) {
@@ -258,13 +258,13 @@ public class AccountServiceReturn {
 							}
 						}
 				} break;
-			case 2:
+			case SORT_BY_OWNER:
 				switch (order) {
-				case 1:
+				case SORT_ASC:
 					for (int i = 0; i < accounts.length - 1; i++) {
 						boolean isSwap = false;
 						for (int j = 0; j < accounts.length - 1 - i; j++) {
-							if (accounts[j].getNo() > accounts[j + 1].getNo()) {
+							if (accounts[j].getOwner().compareTo(accounts[j + 1].getOwner()) > 0) {
 								Account tempAccount = accounts[j];
 								accounts[j] = accounts[j + 1];
 								accounts[j + 1] = tempAccount;
@@ -275,11 +275,11 @@ public class AccountServiceReturn {
 							break;
 						}
 					} break;
-				case 2:
+				case SORT_DESC:
 					for (int i = 0; i < accounts.length - 1; i++) {
 						boolean isSwap = false;
 						for (int j = 0; j < accounts.length - 1 - i; j++) {
-							if (accounts[j].getNo() < accounts[j + 1].getNo()) {
+							if (accounts[j].getOwner().compareTo(accounts[j + 1].getOwner()) < 0) {
 								Account tempAccount = accounts[j];
 								accounts[j] = accounts[j + 1];
 								accounts[j + 1] = tempAccount;
@@ -291,9 +291,9 @@ public class AccountServiceReturn {
 						}
 					} 
 				} break;
-			case 3:
+			case SORT_BY_BALANCE:
 				switch (order) {
-				case 1:
+				case SORT_ASC:
 					for (int i = 0; i < accounts.length - 1; i++) {
 						boolean isSwap = false;
 						for (int j = 0; j < accounts.length - 1 - i; j++) {
@@ -308,7 +308,7 @@ public class AccountServiceReturn {
 							break;
 						}
 					} break;
-				case 2:
+				case SORT_DESC:
 					for (int i = 0; i < accounts.length - 1; i++) {
 						boolean isSwap = false;
 						for (int j = 0; j < accounts.length - 1 - i; j++) {
@@ -324,9 +324,9 @@ public class AccountServiceReturn {
 						}
 					} 
 				} break;
-			case 4:
+			case SORT_BY_IYUL:
 				switch (order) {
-				case 1:
+				case SORT_ASC:
 					for (int i = 0; i < accounts.length - 1; i++) {
 						boolean isSwap = false;
 						for (int j = 0; j < accounts.length - 1 - i; j++) {
@@ -341,7 +341,7 @@ public class AccountServiceReturn {
 							break;
 						}
 					} break;
-				case 2:
+				case SORT_DESC:
 					for (int i = 0; i < accounts.length - 1; i++) {
 						boolean isSwap = false;
 						for (int j = 0; j < accounts.length - 1 - i; j++) {
