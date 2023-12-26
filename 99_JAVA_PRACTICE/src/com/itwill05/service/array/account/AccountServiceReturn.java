@@ -200,7 +200,7 @@ public class AccountServiceReturn {
 		for (int i = 0; i < accounts.length; i++) {
 			if (accounts[i].getNo() == no) {
 				accounts[i].setBalance(accounts[i].getBalance() + m);
-				break;
+				return accounts[i];
 			}
 		}
 		return null;
@@ -210,7 +210,12 @@ public class AccountServiceReturn {
 	 * 9.계좌번호,출금할돈 인자로 받아서 출금
 	 */
 	public Account chulGum(int no, int m) {
-		
+		for (int i = 0; i < accounts.length; i++) {
+			if (accounts[i].getNo() == no) {
+				accounts[i].setBalance(accounts[i].getBalance() - m);
+				return accounts[i];
+			}
+		}
 		return null;
 	}
 
