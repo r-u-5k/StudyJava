@@ -33,7 +33,7 @@ public class AccountServiceReturnMain {
 		}
 		
 		System.out.println("6. AccountServiceReturn객체야 계좌이율(5.0)을 인자로 줄게 이율 이상인 계좌 객체 배열 참조변수 반환해줘");
-		Account[] findAccount2 = accountServiceReturn.findByIyul(5.5);
+		Account[] findAccount2 = accountServiceReturn.findByIyul(5.0);
 		for (Account account : findAccount2) {
 			account.print();
 		}
@@ -51,7 +51,7 @@ public class AccountServiceReturnMain {
 		System.out.println("9. AccountServiceReturn객체야 계좌번호(1111번)와 출금할돈(500원)줄게 출금해줘");
 		/*
 		정렬기준(standard) --> 1:번호,2:이름,3:잔고,4:이율 
-	    	정렬방법(order)    --> 1:오름차순,2:내림차순
+	    정렬방법(order)    --> 1:오름차순,2:내림차순
 		 */
 		
 		System.out.println("10. AccountServiceReturn객체야 계좌를 잔고 순으로 오름차순 정렬해줘");

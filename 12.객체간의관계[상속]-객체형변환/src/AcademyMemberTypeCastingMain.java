@@ -43,6 +43,7 @@ public class AcademyMemberTypeCastingMain {
 		m4.print();
 		m5.print();
 		m6.print();
+		m7.print();
 		
 	}
 
