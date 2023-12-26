@@ -69,8 +69,8 @@ public class AccountServiceReturn {
 	 */
 	public void print() {
 		Account.headerPrint();
-		for (int i = 0; i < accounts.length; i++) {
-			accounts[i].print();
+		for (Account account : accounts) {
+			account.print();
 		}
 	}
 
@@ -256,8 +256,8 @@ public class AccountServiceReturn {
 							if (isSwap == false) {
 								break;
 							}
-						} break;
-				}
+						}
+				} break;
 			case 2:
 				switch (order) {
 				case 1:
@@ -289,8 +289,8 @@ public class AccountServiceReturn {
 						if (isSwap == false) {
 							break;
 						}
-					} break;
-				}
+					} 
+				} break;
 			case 3:
 				switch (order) {
 				case 1:
@@ -322,8 +322,8 @@ public class AccountServiceReturn {
 						if (isSwap == false) {
 							break;
 						}
-					} break;
-				}
+					} 
+				} break;
 			case 4:
 				switch (order) {
 				case 1:
@@ -355,8 +355,8 @@ public class AccountServiceReturn {
 						if (isSwap == false) {
 							break;
 						}
-					} break;
-				}
+					}
+				} break;
 		}
 	}
 
@@ -364,15 +364,28 @@ public class AccountServiceReturn {
 	 * 12.계좌객체를 인자로 받아서 이름,잔고,이율 수정(update)[OPTION]
 	 */
 	public void updateAccount(Account updateAccount) {
-		
+		for (Account account : accounts) {
+			if (account == updateAccount) {
+				account.setOwner("MIN");
+				account.setBalance(90000);
+				account.setIyul(6.6);
+				break;
+			}
+		}
 	}
 
 	/*
 	 * 13.번호,이름,잔고,이율 인자로받아서 계좌객체수정(update)[OPTION]
 	 */
 	public void updateAccount(int no, String owner, int balance, double iyul) {
-		
+		for (Account account : accounts) {
+			if (account.getNo() == no) {
+				account.setAccountData(no, owner, balance, iyul);
+				break;
+			}
+		}
 	}
+	
 	/*
 	 * 14.계좌번호 인자로받아서 삭제해줘[OPTION] 
 	 * 	A. 배열에서 Account객체삭제 
@@ -381,7 +394,17 @@ public class AccountServiceReturn {
 	 *  
 	 */
 	public Account deleteByNo(int no) {
-		
+		for (Account account : accounts) {
+			if (account.getNo() == no) {
+				account = null;
+				break;
+			}
+		}
+		Account[] newAccounts = new Account[accounts.length - 1];
+		for (int i = 0; i < accounts.length - 1; i++) {
+			newAccounts[i] = accounts[i];
+		}
+		this.accounts = newAccounts;
 		return null;
 	}
 	
