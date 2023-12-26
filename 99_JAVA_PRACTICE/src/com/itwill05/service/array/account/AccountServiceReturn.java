@@ -224,7 +224,41 @@ public class AccountServiceReturn {
 	 *             order    --> 1:오름차순,2:내림차순
 	 */
 	public void sort(int standard, int order) {
-		
+		switch (standard) {
+			case 1:
+				switch (order) {
+					case 1:
+						for (int i = 0; i < accounts.length - 1; i++) {
+							boolean isSwap = false;
+							for (int j = 0; j < accounts.length - 1 - i; j++) {
+								if (accounts[j].getNo() > accounts[j + 1].getNo()) {
+									Account tempAccount = accounts[j];
+									accounts[j] = accounts[j + 1];
+									accounts[j + 1] = tempAccount;
+									isSwap = true;
+								}
+							}
+							if (isSwap == false) {
+								break;
+							}
+						}
+					case 2:
+						for (int i = 0; i < accounts.length - 1; i++) {
+							boolean isSwap = false;
+							for (int j = 0; j < accounts.length - 1 - i; j++) {
+								if (accounts[j].getNo() < accounts[j + 1].getNo()) {
+									Account tempAccount = accounts[j];
+									accounts[j] = accounts[j + 1];
+									accounts[j + 1] = tempAccount;
+									isSwap = true;
+								}
+							}
+							if (isSwap == false) {
+								break;
+							}
+						}
+				}
+		}
 	}
 
 	/*
