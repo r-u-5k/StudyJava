@@ -75,8 +75,19 @@ public class StringUseMain {
 		if (name.endsWith("한")) {
 			System.out.println("OO한");
 		}
-
+		
+		System.out.println("- trim() (== strip()) -");
+		String id2 = "   guard     ";
+		System.out.println(id2.trim());
+		System.out.println(id2.strip());
+		String chat = "          ";
+		if (chat.trim().length() == 0) {
+			System.out.println("전송 X");
+		}
+		System.out.println(chat.length());
+		
 		System.out.println("------------------------");
+		
 		/*
 		 * [Quiz]
 		 * String fileName = "a.txt";
