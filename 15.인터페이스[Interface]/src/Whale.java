@@ -11,4 +11,9 @@ public class Whale implements Mammalia {
 		System.out.println("Whale breastfeed");
 	}
 
+	@Override
+	public void live() {
+		System.out.println("Whale live in sea");
+	}
+
 }
