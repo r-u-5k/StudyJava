@@ -43,7 +43,10 @@ public class GajunFactoryMain {
 		
 		System.out.println("- 검사 끝 (출고)-");
 		*/
-		
+		System.out.println("- 가전제품 검사소 -");
+		GajunOnOff[] recvGajunArray = gajunArray;
+		GajunGumsa gajunGumsa = new GajunGumsa();
+		gajunGumsa.setGajuns(recvGajunArray);
 	}
 
 }
