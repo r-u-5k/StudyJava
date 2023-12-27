@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
 
@@ -5,21 +6,19 @@ public class Main {
 
 		Scanner scanner = new Scanner(System.in);
 		
-		int n = scanner.nextInt(); // nCk = n!/((n-k)!*k!)
-		int k = scanner.nextInt();
-		int a = 1, b = 1, c = 1;
-		
-		for (int i = 1; i <= n; i++) {
-			a *= i;
-		}
-		for (int i = 1; i <= k; i++) {
-			b *= i;
-		}
-		for (int i = 1; i <= n - k; i++) {
-			c *= i;
+		int n = scanner.nextInt();
+		scanner.nextLine();
+		String sa[] = new String[n];
+		for (int i = 0; i < sa.length; i++) {
+			sa[i] = scanner.nextLine();
 		}
 		
-		System.out.println(a / (b * c));
+		Arrays.stream(sa);
+		Arrays.sort(sa, (s1, s2) -> s1.length() - s2.length());
+		
+		for (String string : sa) {
+			System.out.println(string);
+		}
 		
 		scanner.close();
 	}
