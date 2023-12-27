@@ -13,12 +13,34 @@ public class Main {
 			sa[i] = scanner.nextLine();
 		}
 		
-		Arrays.stream(sa);
-		Arrays.sort(sa, (s1, s2) -> s1.length() - s2.length());
+		for (int i = 0; i < sa.length - 1; i++) {
+			boolean isSwap = false;
+			for (int j = 0; j < sa.length - 1 - i; j++) {
+				if (sa[i].length() > sa[j].length()) {
+					String temp = sa[i];
+					sa[i] = sa[j];
+					sa[j] = temp;
+					isSwap = true;
+				} else if (sa[i].length() == sa[i].length()) {
+					if (sa[i].compareTo(sa[j]) > 0) {
+						String temp = sa[i];
+						sa[i] = sa[j];
+						sa[j] = temp;
+						isSwap = true;
+					}
+				}
+			}
+			if (isSwap == false) {
+				break;
+			}
+		}
+		
+		sa = Arrays.stream(sa).distinct().toArray(String[]::new);
 		
 		for (String string : sa) {
 			System.out.println(string);
 		}
+		
 		
 		scanner.close();
 	}
