@@ -18,15 +18,17 @@
  * 			D.private   : 외부모든 클래스(객체)에서 접근 불가능
  */
 
+import java.io.FilterInputStream;
+
 public class AccessModifier {
 	/*
-	자바에서 제공되는 패키지이름과 동일한 패키지는 생성할수없다.
-	MyString myString=new MyString();
+	자바에서 제공되는 패키지 이름과 동일한 패키지는 생성할 수 없다.
+	MyString myString = new MyString();
 	System.out.println(myString);
 	*/
 
 	/*
-	 * protected 로 선언된 멤버는 상속받아클래스를 생성한후 사용가능
+	 * protected로 선언된 멤버는 상속받아 클래스를 생성한 후 사용 가능
 	 */
-
+	FilterInputStream fis;
 }

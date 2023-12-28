@@ -5,13 +5,17 @@ public class Main {
 
 		Scanner scanner = new Scanner(System.in);
 		
-		int n = scanner.nextInt();
-		int[] voteNum = new int[n];
-		for (int i = 0; i < n; i++) {
-			voteNum[i] = scanner.nextInt();
+		long n = scanner.nextLong();
+		long m = scanner.nextLong();
+		long gap = 0;
+		
+		if (n >= m) {
+			gap = n - m;
+		} else {
+			gap = m - n;
 		}
 		
-		
+		System.out.println(gap);
 		
 		scanner.close();
 	}
