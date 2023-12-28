@@ -2,7 +2,7 @@
  * - Academy 구성원들의 공통 속성과 기능을 가지고 있는 부모(super) 클래스
  * - AcademyStudent,AcademyGangsa,AcademyStaff 클래스들이 상속받아 재사용하기 위한 클래스
  */
-public class AcademyMember {
+public class AcademyMember { // public abstract class (추상 클래스)
 	private int no; // 번호
 	private String name; // 이름
 	

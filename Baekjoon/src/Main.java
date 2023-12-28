@@ -6,10 +6,12 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		
 		int n = scanner.nextInt();
-		int[] num = new int[n];
+		int[] voteNum = new int[n];
 		for (int i = 0; i < n; i++) {
-			
+			voteNum[i] = scanner.nextInt();
 		}
+		
+		
 		
 		scanner.close();
 	}
