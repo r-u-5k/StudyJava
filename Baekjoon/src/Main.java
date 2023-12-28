@@ -1,46 +1,61 @@
-import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
+		String[] subject = new String[20];
+		String[] grade = new String[20];
+		double[] score = new double[20];
+		double[] credit = new double[20];
+		double[] mulOfScoreCredit = new double[20];
+		double sumOfCredit = 0;
+		double sumAll = 0;
 		
-		int n = scanner.nextInt();
-		scanner.nextLine();
-		String sa[] = new String[n];
-		for (int i = 0; i < sa.length; i++) {
-			sa[i] = scanner.nextLine();
+		for (int i = 0; i < 20; i++) {
+			subject[i] = scanner.next();
+			credit[i] = scanner.nextDouble();
+			grade[i] = scanner.next();
 		}
-		
-		for (int i = 0; i < sa.length - 1; i++) {
-			boolean isSwap = false;
-			for (int j = 0; j < sa.length - 1 - i; j++) {
-				if (sa[j].length() > sa[j + 1].length()) {
-					String temp = sa[j];
-					sa[j] = sa[j + 1];
-					sa[j + 1] = temp;
-					isSwap = true;
-				} else if (sa[j].length() == sa[j + 1].length()) {
-					if (sa[j].compareTo(sa[j + 1]) > 0) {
-						String temp = sa[j];
-						sa[j] = sa[j + 1];
-						sa[j + 1] = temp;
-						isSwap = true;
-					}
-				}
+			
+		for (int i = 0; i < 20; i++) { // 과목평점
+			if (grade[i].equals("A+")) {
+				score[i] = 4.5;
+			} else if (grade[i].equals("A0")) {
+				score[i] = 4.0;
+			} else if (grade[i].equals("B+")) {
+				score[i] = 3.5;
+			} else if (grade[i].equals("B0")) {
+				score[i] = 3.0;
+			} else if (grade[i].equals("C+")) {
+				score[i] = 2.5;
+			} else if (grade[i].equals("C0")) {
+				score[i] = 2.0;
+			} else if (grade[i].equals("D+")) {
+				score[i] = 1.5;
+			} else if (grade[i].equals("D0")) {
+				score[i] = 1.0;
+			} else if (grade[i].equals("F")) {
+				score[i] = 0.0;
+			} else if (grade[i].equals("P")) {
+				score[i] = 0.0;
 			}
-			if (isSwap == false) {
-				break;
+		}
+		
+		for (int i = 0; i < 20; i++) {
+			if (!grade[i].equals("P")) {
+				sumOfCredit += credit[i];
 			}
 		}
 		
-		String[] sa1 = Arrays.stream(sa).distinct().toArray(String[]::new);
-		
-		for (String string : sa1) {
-			System.out.println(string);
+		for (int i = 0; i < 20; i++) {
+			if (!grade[i].equals("P")) {
+				mulOfScoreCredit[i] = score[i] * credit[i];
+				sumAll += mulOfScoreCredit[i];
+			}
 		}
 		
+		System.out.println(sumAll / sumOfCredit);
 		
 		scanner.close();
 	}
