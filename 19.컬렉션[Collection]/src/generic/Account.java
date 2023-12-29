@@ -1,24 +1,20 @@
 package generic;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class Account {
 	private int no; // 계좌번호
 	private String owner; // 계좌주
 	private int balance; // 잔고
 	private double iyul; // 이율
 	
-	/*
-	 * 생성자
-	 */
-	public Account() {
-	}
 	
-	public Account(int no, String owner, int balance, double iyul) {
-		this.no = no;
-		this.owner = owner;
-		this.balance = balance;
-		this.iyul = iyul;
-		// this.setAccountData(no, owner, balance, iyul); -> 동일한 코드
-	}
 
 	/*
 	 * 계좌 데이터를 대입
@@ -61,45 +57,6 @@ public class Account {
 	}
 
 	
-	
-	
-	
-	public int getNo() {
-		return no;
-	}
-
-	public void setNo(int no) {
-		this.no = no;
-	}
-
-	public String getOwner() {
-		return owner;
-	}
-
-	public void setOwner(String owner) {
-		this.owner = owner;
-	}
-
-	public int getBalance() {
-		return balance;
-	}
-
-	public void setBalance(int balance) {
-		this.balance = balance;
-	}
-
-	public double getIyul() {
-		return iyul;
-	}
-
-	public void setIyul(double iyul) {
-		this.iyul = iyul;
-	}
-
-	@Override
-	public String toString() {
-		return "Account [no=" + no + ", owner=" + owner + "]";
-	}
 	
 	
 	

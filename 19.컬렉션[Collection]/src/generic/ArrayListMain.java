@@ -87,7 +87,7 @@ public class ArrayListMain {
 			Account tempAccount = accountList.get(i);
 			tempAccount.print();
 		}		
-		System.out.println("- 3. 계좌주 이름 KIM인 계좌 여러 개 삭제 -");
+		System.out.println("- 5. 계좌주 이름 KIM인 계좌 여러 개 삭제 -");
 		for (int i = 0; i < accountList.size(); i++) {
 			Account tempAccount = accountList.get(i);
 			if (tempAccount.getOwner().equals("KIM")) {
