@@ -13,12 +13,10 @@ public class Account {
 	}
 	
 	public Account(int no, String owner, int balance, double iyul) {
-		
 		this.no = no;
 		this.owner = owner;
 		this.balance = balance;
 		this.iyul = iyul;
-		
 		// this.setAccountData(no, owner, balance, iyul); -> 동일한 코드
 	}
 
