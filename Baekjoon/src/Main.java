@@ -4,18 +4,23 @@ public class Main {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
-		
-		long n = scanner.nextLong();
-		long m = scanner.nextLong();
-		long gap = 0;
-		
-		if (n >= m) {
-			gap = n - m;
-		} else {
-			gap = m - n;
+		int t = scanner.nextInt();
+		boolean str = false;
+		for (int i = 0; i < t; i++) {
+			String s = scanner.next();
+			if (s.indexOf(s, i))
 		}
 		
-		System.out.println(gap);
+		
+		
+		
+		
+		
+		if (str == true) {
+			System.out.println("YES");
+		} else {
+			System.out.println("NO");
+		}
 		
 		scanner.close();
 	}
