@@ -19,6 +19,7 @@ public class RuntimeExceptionCatchMain1 {
 		 3. 현재실행흐름은 예외가발생한곳에서 catch block으로 실행흐름이이동한다.
 		 */
 		System.out.println("code length:" + length);
+		
 		System.out.println("stmt2");
 
 		int[] intArray = new int[3];
@@ -31,11 +32,14 @@ public class RuntimeExceptionCatchMain1 {
 		 3. 현재실행흐름은 예외가발생한곳에서 catch block으로 실행흐름이이동한다.
 		 */
 		System.out.println("stmt3");
+		
 		int a = 3;
 		int b = 0;
 		int r = a / b;
 		System.out.println("r = " + r);
+		
 		System.out.println("stmt4");
+		
 		} catch (Exception e) {
 			System.out.println("- catch start [Exception] -");
 			JOptionPane.showMessageDialog(null, "호갱님 ㅈㅅ 프로그램 종료함 " + e.getMessage());
