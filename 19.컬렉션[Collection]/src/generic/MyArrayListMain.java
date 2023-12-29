@@ -1,4 +1,4 @@
-package nongeneric;
+package generic;
 
 public class MyArrayListMain {
 
@@ -13,7 +13,7 @@ public class MyArrayListMain {
 			Account acc8 = new Account(8888, "SOO", 12300, 2.3);
 			Account acc9 = new Account(9999, "MIN", 41200, 4.1);
 			
-			MyArrayList accountArrayList = new MyArrayList();
+			MyArrayList<Account> accountArrayList = new MyArrayList<Account>();
 			System.out.println("size: " + accountArrayList.size());
 			accountArrayList.add(acc1);
 			accountArrayList.add(acc2);
@@ -26,11 +26,10 @@ public class MyArrayListMain {
 			accountArrayList.add(acc9);
 			System.out.println("size: " + accountArrayList.size());
 			
-			Account getAccount = (Account) accountArrayList.get(0);
+			Account getAccount = accountArrayList.get(0);
 			System.out.println(getAccount);
 			for (int i = 0; i < accountArrayList.size(); i++) {
-				Account tempAccount = (Account) accountArrayList.get(i);
-				tempAccount.print();
+				accountArrayList.get(i).print();
 			}
 			
 	}

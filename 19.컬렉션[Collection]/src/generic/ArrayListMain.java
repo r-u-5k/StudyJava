@@ -1,4 +1,4 @@
-package nongeneric;
+package generic;
 
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ public class ArrayListMain {
 		Account acc8 = new Account(8888, "KIM", 12300, 2.3);
 		Account acc9 = new Account(9999, "MIN", 41200, 4.1);
 		
-		ArrayList accountList = new ArrayList();
+		ArrayList<Account> accountList = new ArrayList<Account>();
 		int size = accountList.size();
 		System.out.println("size: " + size);
 		
@@ -43,11 +43,11 @@ public class ArrayListMain {
 		System.out.println(accountList.toString());
 		
 		System.out.println("4. get(index, element) [지정된 index의 element 참조변수 반환]");
-		Account getAccount = (Account) accountList.get(accountList.size() - 1);
+		Account getAccount = accountList.get(accountList.size() - 1);
 		System.out.println(getAccount.toString());
 
 		System.out.println("5. remove(index) [지정된 index의 element 삭제 후 삭제한 element 참조변수 반환]");
-		Account removeAccount = (Account) accountList.remove(accountList.indexOf(acc5));
+		Account removeAccount = accountList.remove(accountList.indexOf(acc5));
 		System.out.println(removeAccount);
 		System.out.println("size: " + accountList.size());
 		System.out.println(accountList);
@@ -55,13 +55,13 @@ public class ArrayListMain {
 		System.out.println("- 1. 계좌 전체 출력 -");
 		Account.headerPrint();
 		for (int i = 0; i < accountList.size(); i++) {
-			Account tempAccount = (Account) accountList.get(i);
+			Account tempAccount = accountList.get(i);
 			tempAccount.print();
 		}
 		
 		System.out.println("- 2. 계좌번호 6666번 계좌 한 개 찾기 -");
 		for (int i = 0; i < accountList.size(); i++) {
-			Account tempAccount = (Account) accountList.get(i);
+			Account tempAccount = accountList.get(i);
 			if (tempAccount.getNo() == 6666) {
 				tempAccount.print();
 				break;
@@ -69,8 +69,7 @@ public class ArrayListMain {
 		}
 		
 		System.out.println("- 3. 계좌주 이름 KIM인 계좌 여러 개 찾기 -");
-		for (Object objectAccount : accountList) {
-			Account tempAccount = (Account) objectAccount;
+		for (Account tempAccount : accountList) {
 			if (tempAccount.getOwner().equals("KIM")) {
 				tempAccount.print();
 			}
@@ -78,26 +77,26 @@ public class ArrayListMain {
 		
 		System.out.println("- 4. 계좌번호 6666번 계좌 한 개 삭제 -");
 		for (int i = 0; i < accountList.size(); i++) {
-			Account tempAccount = (Account) accountList.get(i);
+			Account tempAccount = accountList.get(i);
 			if (tempAccount.getNo() == 6666) {
 				accountList.remove(i);
 				break;
 			}
 		} // 계좌 전체 출력
 		for (int i = 0; i < accountList.size(); i++) {
-			Account tempAccount = (Account) accountList.get(i);
+			Account tempAccount = accountList.get(i);
 			tempAccount.print();
 		}		
 		System.out.println("- 3. 계좌주 이름 KIM인 계좌 여러 개 삭제 -");
 		for (int i = 0; i < accountList.size(); i++) {
-			Account tempAccount = (Account) accountList.get(i);
+			Account tempAccount = accountList.get(i);
 			if (tempAccount.getOwner().equals("KIM")) {
 				accountList.remove(i);
 				i--; // 리스트에서 삭제된 객체보다 인덱스가 큰 객체들의 인덱스가 하나씩 줄어들기 때문에 여러 개를 찾을 경우 인덱스를 재조정하여 for문을 돌려야 함
 			}
 		} // 계좌 전체 출력
 		for (int i = 0; i < accountList.size(); i++) {
-			Account tempAccount = (Account) accountList.get(i);
+			Account tempAccount = accountList.get(i);
 			tempAccount.print();
 		}		
 		

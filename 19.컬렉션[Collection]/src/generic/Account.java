@@ -1,4 +1,4 @@
-package nongeneric;
+package generic;
 
 public class Account {
 	private int no; // 계좌번호

@@ -45,9 +45,9 @@ public class CarService {
 		}
 		
 		// 3. 입차
-		for (int i = 0; i < carArray.length; i++) {
-			if (carArray[i] == null) {
-				carArray[i] = car;
+		for (Car car2 : carArray) {
+			if (car2 == null) {
+				car2 = car;
 				break;
 			}
 		}
@@ -139,9 +139,10 @@ public class CarService {
 	 */
 	public void print() {
 		Car.headerPrint();
-		for (int i = 0; i < carArray.length; i++) {
-			if (carArray[i] != null)
-				carArray[i].print();
+		for (Car car : carArray) {
+			if (car != null) {
+				car.print();
+			}
 		}
 	}
 
