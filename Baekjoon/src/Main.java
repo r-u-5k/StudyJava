@@ -1,23 +1,26 @@
 import java.util.Scanner;
+
 public class Main {
+	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		
 		int n = scanner.nextInt();
-		int range = 1;
-		int count = 1;
+		int m = scanner.nextInt();
+		int[] basket = new int[n + 1];
+		int temp = 0;
 		
-		for (int i = 1; i < n; i++) {
-			range += 6 * i;
-			count++;
-			if (n <= range) {
-				break;
-			}
+		for (int i = 1; i <= n; i++) {
+			basket[i] = i;
 		}
 		
-		System.out.println(count);
-		
-		scanner.close();
+		for (int k = 0; k < m; k++) {
+			int i = scanner.nextInt();
+			int j = scanner.nextInt();
+			
+			for (int a = i; a <= j; a++) {
+				
+			}
+		}
 	}
 
 }
