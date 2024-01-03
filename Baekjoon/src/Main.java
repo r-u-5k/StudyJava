@@ -1,29 +1,23 @@
 import java.util.Scanner;
 public class Main {
-
 	public static void main(String[] args) {
-
 		Scanner scanner = new Scanner(System.in);
-		int t = scanner.nextInt();
-		for (int i = 0; i < t; i++) {
-			String s = scanner.next();
-			for (int j = 0; j < s.length(); j++) {
-				if (s.indexOf("()") != -1) {
-					s.replace("()", "");
-				} else {
-					break;
-				}
+		
+		int n = scanner.nextInt();
+		int range = 1;
+		int count = 1;
+		
+		for (int i = 1; i < n; i++) {
+			range += 6 * i;
+			count++;
+			if (n <= range) {
+				break;
 			}
-			if (s == "") {
-				System.out.println("YES");
-			} else {
-				System.out.println("NO");
-			}
-				
 		}
 		
-	
+		System.out.println(count);
 		
 		scanner.close();
 	}
+
 }
