@@ -25,7 +25,13 @@ public class PrintStreamMain {
 		pout.print("true");
 		pout.print(3.14);
 		pout.print("3.14");
-		
+		pout.println();
+		pout.println("첫 번째 줄");
+		pout.println("두 번째 줄");
+		pout.flush();
+		pout.close();
+		System.out.println("System 표준 출력");
+		System.err.println("System 에러 출력");
 		System.out.println("- PrintStream.print() -");
 		
 	}
