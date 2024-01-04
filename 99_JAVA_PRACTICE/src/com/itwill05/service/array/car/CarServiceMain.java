@@ -33,7 +33,7 @@ public class CarServiceMain {
 		
 		System.out.println("5.CarService객체야 입차시간(8시이후) 인자로 줄게 차 객체 배열 참조변수 반환해줘");
 		carService.findByInTime(8);
-		
+
 		System.out.println("6.CarService객체야 차량번호(1212번) 출차시간(12시) 인자로 줄게 출차시켜주고 출차차량 참조변수 반환해줘");
 		carService.chulCha("1212", 12);
 		carService.print();

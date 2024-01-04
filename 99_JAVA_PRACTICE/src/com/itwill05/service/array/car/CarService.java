@@ -73,6 +73,7 @@ public class CarService {
 			if (car != null && car.getNo().equals(no)) {
 				car.setOutTime(outTime);
 				outCar = car;
+				car = null;
 			}
 		}
 		return outCar;

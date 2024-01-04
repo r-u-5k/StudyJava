@@ -17,10 +17,19 @@ public class Main {
 			int i = scanner.nextInt();
 			int j = scanner.nextInt();
 			
-			for (int a = i; a <= j; a++) {
-				
+			for (int a = i; a < j; a++) {
+				temp = basket[i];
+				basket[i] = basket[j];
+				basket[j] = temp;
+				i++;
+				j--;
 			}
 		}
+		for (int i = 1; i <= n; i++) {
+			System.out.print(basket[i] + " ");
+		}
+		
+		scanner.close();
 	}
 
 }

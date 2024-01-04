@@ -1,4 +1,4 @@
-package charstream;
+package charstream.filterstream;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
