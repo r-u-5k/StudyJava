@@ -1,5 +1,6 @@
 
 public class OuterClass {
+	/* OuterClass에서 InnerClass 클래스 객체를 멤버 필드로 사용 */
 	private InnerClass ic = new InnerClass();
 	/*
 	 * 인스턴스 멤버 필드
@@ -12,7 +13,7 @@ public class OuterClass {
 		System.out.println("OuterClass.outer_member_method()");
 	}
 	
-	/* OuterClass에서 InnerClass 클래스 객체 생성&사용 */
+	/* OuterClass에서 InnerClass 클래스 객체를 생성&사용 */
 	public void outer_inner_class_use() {
 //		OuterClass.InnerClass ic = new InnerClass();
 		InnerClass ic = new InnerClass();
