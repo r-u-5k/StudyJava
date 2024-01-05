@@ -1,9 +1,11 @@
 package com.itwill05.service.collection.student;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 /*
  * 성적처리를 위한 필요한 학생객체를 만들기 위한 클래스
