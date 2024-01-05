@@ -2,25 +2,29 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Main {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		
 		int n = Integer.parseInt(br.readLine());
-		ArrayList<Integer> arr = new ArrayList<Integer>();
-		for (int i = 0; i < n; i++) {
-			arr.add(Integer.parseInt(br.readLine()));
+		
+		Queue<Integer> q = new LinkedList<Integer>();
+		
+		for (int i = 1; i <= n; i++) {
+			q.offer(i);
 		}
-		Collections.sort(arr);
-		for (Integer i : arr) {
-			bw.write(Integer.toString(i));
-			bw.newLine();
+		
+		while (q.size() > 1) {
+			q.poll();
+			q.offer(q.poll());
 		}
+		
+		bw.write(Integer.toString(q.poll()));
+		
 		
 		bw.flush();
 		bw.close();
