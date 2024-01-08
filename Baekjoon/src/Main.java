@@ -1,33 +1,68 @@
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class Main {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		int n = Integer.parseInt(br.readLine());
-		
-		Queue<Integer> q = new LinkedList<Integer>();
-		
-		for (int i = 1; i <= n; i++) {
-			q.offer(i);
+		ArrayList<Integer> arr = new ArrayList<Integer>();
+		StringBuilder sb = new StringBuilder();
+		StringTokenizer st;
+
+		for (int i = 0; i < n; i++) {
+			st = new StringTokenizer(br.readLine());
+			String s = st.nextToken();
+			int x = 0;
+			if (s.equals("push")) { 
+				x = Integer.parseInt(st.nextToken());
+				arr.add(x);
+			} else {
+				switch (s) {
+					case "pop": { 
+						if (arr.isEmpty()) {
+							sb.append(-1 + "\n");
+						} else {
+							sb.append(arr.remove(0) + "\n");
+						} 
+						break;
+					}
+					case "size": { 
+						sb.append(arr.size() + "\n");
+						break;
+					} 
+					case "empty": { 
+						if (arr.isEmpty()) {
+							sb.append(1 + "\n");
+						} else {
+							sb.append(0 + "\n");
+						} 
+						break;
+					}
+					case "front": { 
+						if (arr.isEmpty()) {
+							sb.append(-1 + "\n");
+						} else {
+							sb.append(arr.get(0) + "\n");
+						} 
+						break;
+					}
+					case "back": { 
+						if (arr.isEmpty()) {
+							sb.append(-1 + "\n");
+						} else {
+							sb.append(arr.get(arr.size() - 1) + "\n");
+						} 
+						break;
+					}
+				}
+
+			}
 		}
-		
-		while (q.size() > 1) {
-			q.poll();
-			q.offer(q.poll());
-		}
-		
-		bw.write(Integer.toString(q.poll()));
-		
-		
-		bw.flush();
-		bw.close();
-		br.close();
+
+		System.out.println(sb);
+
 	}
 }

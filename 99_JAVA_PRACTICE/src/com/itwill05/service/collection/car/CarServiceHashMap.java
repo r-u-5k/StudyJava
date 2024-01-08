@@ -11,8 +11,11 @@ public class CarServiceHashMap {
 	private int count;// 주차장 구획수
 
 	public CarServiceHashMap() {
+		/*
 		carMap = new HashMap<String, Car>();
 		count = 30;
+		*/
+		this(30);
 	}
 
 	public CarServiceHashMap(int count) {
@@ -38,11 +41,13 @@ public class CarServiceHashMap {
 	 */
 	public void print() {
 		Car.headerPrint();
-		Set<String> keySet = carMap.keySet();
-		for (String key : keySet) {
-			Car car = carMap.get(key);
-			car.print();
+		Iterator<String> keyIterator = carMap.keySet().iterator();
+		while (keyIterator.hasNext()) {
+			String keyString = keyIterator.next();
+			Car tempCar = carMap.get(keyString);
+			tempCar.print();
 		}
+		
 	}
 
 	/*
