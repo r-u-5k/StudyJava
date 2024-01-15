@@ -63,7 +63,7 @@ public class DayTimeClientFrame extends JFrame {
 					/*
 					 * 1. Socket 생성
 					 */
-					Socket socket = new Socket("192.168.15.31", 8000);
+					Socket socket = new Socket("192.168.15.7", 8000);
 					/*
 					 * 2. Socket으로부터 InputStream 얻기
 					 */

@@ -6,7 +6,7 @@ import java.net.Socket;
 public class ClientSocketMain {
 
 	public static void main(String[] args) throws Exception {
-		Socket socket = new Socket("192.168.15.31", 3333);
+		Socket socket = new Socket("192.168.15.7", 3333);
 		System.out.println(">> Client쪽 Socket: " + socket.toString());
 		InetAddress remoteAddress = socket.getInetAddress();
 		InetAddress localAddress = socket.getLocalAddress();

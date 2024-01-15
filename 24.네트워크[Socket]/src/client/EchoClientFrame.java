@@ -70,7 +70,7 @@ public class EchoClientFrame extends JFrame {
 					/*
 					 * 1. Socket 생성
 					 */
-					Socket socket = new Socket("192.168.15.31", 9999);
+					Socket socket = new Socket("192.168.15.7", 9999);
 
 					/*
 					 * 2. 서버로 문자 데이터 쓰기
@@ -93,7 +93,7 @@ public class EchoClientFrame extends JFrame {
 					 */
 					BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 					String serverEchoString = br.readLine();
-					displayTextArea.append(serverEchoString);
+					displayTextArea.append(serverEchoString + "\n");
 					pw.close();
 					br.close();
 					socket.close();
