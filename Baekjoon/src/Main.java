@@ -1,37 +1,37 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Deque;
-import java.util.Iterator;
-import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine());
-		List<Integer> list = new ArrayList<>();
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		sc.next();
+		int[] a = new int[n];
 		for (int i = 0; i < n; i++) {
-			list.add(Integer.parseInt(br.readLine()));
+			a[i] = sc.nextInt();
 		}
-		int totPeople = list.size();
-		int noReflectPeople = (int) Math.round(totPeople * 0.15);
+		avg(a);
 		
-		Collections.sort(list);
-		for (int i = 0; i < noReflectPeople; i++) {
-			list.remove(i);
-			list.remove(list.size() - 1 - i);
-		}
-		
+	}
+	
+	public static void avg(int[] a) {
 		int sum = 0;
-		for (Integer integer : list) {
-			sum += integer;
+		for (int i = 0; i < a.length; i++) {
+			sum += a[i];
 		}
+		System.out.println(Math.round(sum * 1.0 / a.length));
+	}
+	
+	public void mid(int[] a) {
 		
-		int answer = (int) Math.round(sum * 1.0 / (totPeople - 2 * noReflectPeople));
-		System.out.println(answer);
+	}
+	
+	public void freq(int[] a) {
+		
+	}
+	
+	public void range(int[] a) {
+		
 	}
 }
